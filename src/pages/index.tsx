@@ -1,26 +1,29 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
+import Button from '@material-ui/core/Button'
+import Container from '@material-ui/core/Container'
+import Flow from '../components/flow'
 
 export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
+        <title>Rulerstick</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta
+          name="viewport"
+          content="minimum-scale=1, initial-scale=1, width=device-width"
+        />
       </Head>
 
-      <main className={styles.main}>
-      </main>
+      <Container>
+        <Button variant="contained" color="primary">
+          Hello World
+        </Button>
+        <Flow />
+      </Container>
 
       <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
       </footer>
     </div>
   )

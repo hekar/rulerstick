@@ -1,7 +1,7 @@
 import {Entity, Column} from "typeorm";
 
 @Entity()
-export class Set {
+export class Feed {
 
     @Column()
     id: number;
