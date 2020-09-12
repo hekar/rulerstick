@@ -1,10 +1,23 @@
+import { GetServerSideProps } from 'next'
 import Head from 'next/head'
+import { makeStyles } from '@material-ui/core/styles';
 import styles from '../styles/Home.module.css'
 import Button from '@material-ui/core/Button'
 import Container from '@material-ui/core/Container'
+
 import Flow from '../components/flow'
 
-export default function Home() {
+export const getServerSideProps: GetServerSideProps = async (context) => {
+
+
+
+  return {
+    props: {},
+  }
+}
+
+export default function Home(props) {
+
   return (
     <div className={styles.container}>
       <Head>
@@ -17,10 +30,7 @@ export default function Home() {
       </Head>
 
       <Container>
-        <Button variant="contained" color="primary">
-          Hello World
-        </Button>
-        <Flow />
+        <Flow {...props} />
       </Container>
 
       <footer className={styles.footer}>

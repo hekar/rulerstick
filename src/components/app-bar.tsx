@@ -30,6 +30,9 @@ const useStyles = makeStyles((theme) => ({
       display: 'block',
     },
   },
+  titleButton: {
+    color: theme.palette.common.white,
+  },
   search: {
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
@@ -152,14 +155,6 @@ export default function AppBarDrawer() {
         </IconButton>
         <p>Messages</p>
       </MenuItem>
-      <MenuItem>
-        <IconButton aria-label="show 11 new notifications" color="inherit">
-          <Badge badgeContent={11} color="secondary">
-            <NotificationsIcon />
-          </Badge>
-        </IconButton>
-        <p>Notifications</p>
-      </MenuItem>
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
           aria-label="account of current user"
@@ -188,7 +183,11 @@ export default function AppBarDrawer() {
             <MenuIcon />
           </IconButton>
           <Typography className={classes.title} variant="h6" noWrap>
-            <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleProjectMenuClick}>
+            <Button
+              className={classes.titleButton}
+              aria-controls="simple-menu"
+              aria-haspopup="true"
+              onClick={handleProjectMenuClick}>
               Rulerstick
             </Button>
             <Menu
@@ -201,6 +200,7 @@ export default function AppBarDrawer() {
               <MenuItem onClick={handleProjectMenuClose}>Default</MenuItem>
             </Menu>
           </Typography>
+          <div className={classes.grow} />
           <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />
@@ -214,16 +214,10 @@ export default function AppBarDrawer() {
               inputProps={{ 'aria-label': 'search' }}
             />
           </div>
-          <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
             <IconButton aria-label="show 4 new mails" color="inherit">
               <Badge badgeContent={4} color="secondary">
                 <MailIcon />
-              </Badge>
-            </IconButton>
-            <IconButton aria-label="show 17 new notifications" color="inherit">
-              <Badge badgeContent={17} color="secondary">
-                <NotificationsIcon />
               </Badge>
             </IconButton>
             <IconButton

@@ -2,25 +2,19 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
-import Divider from '@material-ui/core/Divider';
 import Grid from '@material-ui/core/Grid';
+import Fab from '@material-ui/core/Fab';
+import Tooltip from '@material-ui/core/Tooltip';
+import Zoom from '@material-ui/core/Zoom';
+import AddIcon from '@material-ui/icons/Add';
+
 import Feed from './feed'
 
 const useStyles = makeStyles((theme) => ({
-  container: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(12, 1fr)',
-    gridGap: theme.spacing(3),
-  },
-  paper: {
-    padding: theme.spacing(1),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-    whiteSpace: 'nowrap',
-    marginBottom: theme.spacing(1),
-  },
-  divider: {
-    margin: theme.spacing(2, 0),
+  fab: {
+    position: 'fixed',
+    bottom: theme.spacing(4),
+    right: theme.spacing(4),
   },
 }));
 
@@ -29,17 +23,33 @@ export default function Flow() {
 
   return (
     <div>
-      <Typography variant="subtitle1" gutterBottom>
-        Material-UI Grid:
-      </Typography>
+      <Paper>
       <Grid container spacing={3}>
-        <Grid item xs={8}>
-          <Feed />
-        </Grid>
         <Grid item xs={4}>
-          <Paper>xs=4</Paper>
+          <Feed title="Today" />
+        </Grid>
+        <Grid item xs={8}>
+          <Feed title="This Week" />
         </Grid>
       </Grid>
+      <Grid container spacing={3}>
+        <Grid item xs={12}>
+          <Feed title="May Do" />
+        </Grid>
+      </Grid>
+      </Paper>
+
+      <Zoom in={true}>
+        <Tooltip title="Add item to feed" aria-label="add">
+          <Fab
+            color="primary"
+            aria-label="add"
+            className={classes.fab}>
+            <AddIcon />
+          </Fab>
+        </Tooltip>
+      </Zoom>
     </div>
   );
 }
+
