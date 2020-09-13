@@ -10,6 +10,9 @@
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
+    "@nestjsx/crud": "^4.6.2",
+    "@nestjsx/crud-request": "^4.6.2",
+    "@nestjsx/crud-typeorm": "^4.6.2",
     "jdenticon": "^3.0.1",
     "next": "9.5.3",
     "pg": "^8.3.3",
