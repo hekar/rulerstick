@@ -10,10 +10,9 @@
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
-    "@nestjsx/crud": "^4.6.2",
-    "@nestjsx/crud-request": "^4.6.2",
-    "@nestjsx/crud-typeorm": "^4.6.2",
+    "@types/lodash": "^4.14.161",
     "jdenticon": "^3.0.1",
+    "lodash": "^4.17.20",
     "next": "9.5.3",
     "pg": "^8.3.3",
     "react": "16.13.1",
@@ -22,6 +21,7 @@
     "typeorm": "^0.2.25"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-decorators": "^7.10.5",
     "@types/node": "^14.6.4",
     "@types/react": "^16.9.49",
     "typescript": "^4.0.2"
