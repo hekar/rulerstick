@@ -1,5 +1,5 @@
-import { createConnection, Connection, Repository } from "typeorm";
-import { Item } from "../entity/item";
+import { createConnection, Connection, Repository } from 'typeorm';
+import { Item } from '../entity/item';
 
 export default class ItemService {
     constructor() {

@@ -6,19 +6,10 @@ import Button from '@material-ui/core/Button'
 import Container from '@material-ui/core/Container'
 
 import Flow from '../components/flow'
-import FlowService from '../services/flow-service';
-import FeedService from '../services/feed-service';
-import ItemService from '../services/item-service';
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const flowService = new FlowService()
-  const flows = flowService.list(0, 0)
-  const feedService = new FeedService()
-  const feeds = feedService.list(0, 0)
   return {
     props: {
-      flows,
-      feeds,
     },
   }
 }
